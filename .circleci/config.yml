@@ -2,7 +2,7 @@ version: 2.1
 jobs:
   build:
     docker:
-      - image: kyotsuya/wai-middleware-validation:lts-16.31
+      - image: kyotsuya/wai-middleware-validation-test:lts-16.31
     steps:
       - checkout
       - run: stack test
