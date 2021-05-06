@@ -6,3 +6,11 @@ jobs:
     steps:
       - checkout
       - run: stack test
+workflows:
+  version: 2
+  release:
+    jobs:
+      - test:
+          filters:
+            branches:
+              ignore: gh-pages
