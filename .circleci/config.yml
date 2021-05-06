@@ -1,6 +1,6 @@
 version: 2.1
 jobs:
-  build:
+  test:
     docker:
       - image: kyotsuya/wai-middleware-validation-test:lts-16.31
     steps:
@@ -8,7 +8,7 @@ jobs:
       - run: stack test
 workflows:
   version: 2
-  release:
+  push:
     jobs:
       - test:
           filters:
