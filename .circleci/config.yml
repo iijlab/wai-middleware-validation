@@ -1,14 +1,5 @@
 version: 2.1
 
-workflows:
-  version: 2
-  integration:
-    jobs:
-      - test:
-          filters:
-            branches:
-              ignore: gh-pages
-
 jobs:
   test:
     docker:
