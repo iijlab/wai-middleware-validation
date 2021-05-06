@@ -12,7 +12,7 @@ slug: /
 3. Apply the middleware to the WAI application.
 4. That's it! The middleware will automatically validate the request and response and return an error response if there is a validation error.
 
-See [Examples](/examples/yesod) for a more detailed example.
+See [Examples](/examples/yesod) for more details.
 
 ## License
 
