@@ -2,39 +2,16 @@
 
 wai-middleware-validation is a WAI Middleware that automates the validation of request and response bodies. It validates JSON format bodies according to the schema defined in the OpenAPI document.
 
-## Usage
+## Overview of Usage
 
-The following is an example of applying it to a Yesod application.
+1. Describe the schema of the request and response bodies in OpenAPI document.
+2. Instansiate this middleware with that document as an argument.
+3. Apply the middleware to the WAI application.
+4. That's it! The middleware will automatically validate the request and response and return an error response if there is a validation error.
 
-1. Define the request and response specifications as an OpenAPI document file in JSON format and place it in an arbitrary path. (In this case, we will use "config/openapi.json".)
-2. Make the following modifications to `Application.hs`.
-```diff
---- a/src/Application.hs
-+++ b/src/Application.hs
-@@ -37,6 +37,8 @@ import Network.Wai.Middleware.RequestLogger (Destination (Logger),
-                                              mkRequestLogger, outputFormat)
- import System.Log.FastLogger                (defaultBufSize, newStdoutLoggerSet,
-                                              toLogStr)
-+import Network.Wai.Middleware.Validation    (mkValidator')
-+import qualified Data.ByteString.Lazy as L
+See [Examples](https://iij-ii.github.io/wai-middleware-validation/examples/yesod) for more details.
 
- -- Import all relevant handler modules here.
- -- Don't forget to add new modules to your cabal file!
-@@ -94,7 +97,10 @@ makeApplication foundation = do
-     logWare <- makeLogWare foundation
-     -- Create the WAI application and apply middlewares
-     appPlain <- toWaiAppPlain foundation
--    return $ logWare $ defaultMiddlewaresNoLogging appPlain
-+    apiJson <- L.readFile "config/openapi.json"
-+    let validator = fromMaybe (error "Invalid OpenAPI document") (mkValidator' apiJson)
-+        app = validator appPlain
-+    return $ logWare $ defaultMiddlewaresNoLogging app
-
- makeLogWare :: App -> IO Middleware
- makeLogWare foundation =
-```
-
-## LICENCE
+## License
 
 Copyright (c) IIJ Innovation Institute Inc.
 
