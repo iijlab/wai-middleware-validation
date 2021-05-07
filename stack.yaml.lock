@@ -5,12 +5,12 @@
 
 packages:
 - completed:
-    hackage: openapi3-3.0.2.0@sha256:046c7af7c2157308fc364189923de63ba793d502ef9ede01da41b49f7a649563,4788
+    hackage: openapi3-3.1.0@sha256:dd666c03bda1aeb1c50724385d0c79dd2c50b827413552fd522f7314e7081bc4,4652
     pantry-tree:
       size: 2191
-      sha256: 82857392fd481810936a31671aafbefc433833fed7e3e4bee43c026cefe90182
+      sha256: d1db2e3bbf8672ac494fb099dcd36721d8afd1ff7e07d020001c8c19c3245702
   original:
-    hackage: openapi3-3.0.2.0@sha256:046c7af7c2157308fc364189923de63ba793d502ef9ede01da41b49f7a649563,4788
+    hackage: openapi3-3.1.0@sha256:dd666c03bda1aeb1c50724385d0c79dd2c50b827413552fd522f7314e7081bc4,4652
 snapshots:
 - completed:
     size: 534126

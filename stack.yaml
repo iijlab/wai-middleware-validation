@@ -41,7 +41,7 @@ packages:
 #
 # extra-deps: []
 extra-deps:
-- openapi3-3.0.2.0@sha256:046c7af7c2157308fc364189923de63ba793d502ef9ede01da41b49f7a649563,4788
+- openapi3-3.1.0@sha256:dd666c03bda1aeb1c50724385d0c79dd2c50b827413552fd522f7314e7081bc4,4652
 
 # Override default flag values for local packages and extra-deps
 # flags: {}
